@@ -66,3 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### task
+
+2. Start by only configuring ONE route. Say, for `/films`. After navigating to `localhost:3000/films`, you should see your list of films that you rendered to the browser in the previous lab. The caveat? You shouldn't need **any** if/else if/else logic in your render methods. The data should only be loaded and displayed when you navigate to `/films`. You should use `componentDidMount()` and `fetch` to make this request.

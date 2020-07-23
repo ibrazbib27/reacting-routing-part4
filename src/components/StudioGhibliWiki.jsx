@@ -6,11 +6,24 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import Logo from './../assets/logo.png';
+import JPG from './../assets/Studio_Ghibli_Characters.jpg';
 import FilmsPage from './FilmsPage';
 import HomePage from './HomePage';
 import PeoplePage from './PeoplePage';
+import Footer from './Footer';
 
+
+const styles = {
+backgroundImage: `url(${JPG}) , linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6))`,
+  backgroundBlendMode: `overlay`,
+  backgroundPosition: `center`,
+  backgroundRepeat: `no-repeat`,
+  backgroundSize: `cover`,
+  backgroundAttachment: `fixed`
+
+}
 class StudioGhibliWiki extends Component {
         constructor(){
         super();
@@ -74,14 +87,14 @@ let addClose = (mainelement, span, x )  =>{
             <React.Fragment>
                  <Router>
             <Fragment>
-<Navbar  className="pt-3" collapseOnSelect  expand="md" bg="dark" variant="dark" fixed="top">
+<Navbar  className="pt-1" collapseOnSelect  expand="md" bg="dark" variant="dark" fixed="top">
    
         
     <Row className="w-25"> 
     <Navbar.Brand className="ml-3 mr-auto " >
         <Col> <Image className=" bg-white" src={Logo} height={"50"} width={"160"} rounded /></Col><Col className="mt-2">Studio Ghibli Wiki </Col></Navbar.Brand>
     </Row>
-    <Navbar.Toggle className="px-3 py-4 my-auto ml-2"   onClick={(e) => {
+    <Navbar.Toggle className="px-4 py-4 my-auto ml-2"   onClick={(e) => {
                 let elem = document.getElementsByClassName("navbar-toggler")[1];
                 let x = document.createTextNode("×");
                 let span = document.createElement("span");
@@ -166,16 +179,29 @@ let addClose = (mainelement, span, x )  =>{
     </Navbar.Collapse>
 
 </Navbar> 
-    <Container className="p-5" fluid>
-        <Row className="mt-5"></Row>
-        <Row className="mt-5">
-                <Switch>
+    <Container  style={styles} className=" p-0 m-0" fluid>
+       <Row className="my-5"></Row>
+         <Row className="my-5"></Row>
+        <Row className="my-5"></Row>
+                    <Jumbotron className="rounded mx-auto w-75 py-3" fluid>
+  <Container>
+
+ <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route path="/films" component={FilmsPage}/>
                      <Route path="/people" component={PeoplePage}/>
                     </Switch>
-                </Row>
+     
+  </Container>
+</Jumbotron>
+     
+
+                
+          <Row className="my-5"></Row>
+        <Row className="my-5"></Row>
+         <Footer />
                 </Container>
+               
              </Fragment>
          </Router>
             </React.Fragment>
