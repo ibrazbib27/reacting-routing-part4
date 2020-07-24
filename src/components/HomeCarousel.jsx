@@ -30,7 +30,7 @@ const HomeCarousel = (props) => {
 
     <Carousel.Caption>
       <h3>New Movie coming 2021</h3>
-      <p>For information will be coming as we get close to the release date of the movie</p>
+      <p>More information will be coming as we get close to the release date of the movie</p>
     </Carousel.Caption>
       <CarouselOverlay />
   </Carousel.Item>
@@ -43,7 +43,7 @@ const HomeCarousel = (props) => {
 
     <Carousel.Caption>
       <h3>Characters</h3>
-      <p>Learn more about your favorite characters to have been featured in Studio Ghibli productions</p>
+      <p>Learn more about your favorite Studio Ghibli characters</p>
     </Carousel.Caption>
       <CarouselOverlay />
   </Carousel.Item>

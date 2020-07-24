@@ -10,6 +10,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Logo from './../assets/logo.png';
 import JPG from './../assets/Studio_Ghibli_Characters.jpg';
 import FilmsPage from './FilmsPage';
+import FilmInfo from './FilmInfo';
 import HomePage from './HomePage';
 import PeoplePage from './PeoplePage';
 import Footer from './Footer';
@@ -152,7 +153,7 @@ let addClose = (mainelement, span, x )  =>{
             
             
             
-            <Nav.Link as={Link} to="/films" className=" mb-2 FilmsCl border border-white mx-3"   
+            <Nav.Link as={Link} exact to="/films" className=" mb-2 FilmsCl border border-white mx-3"   
             onClick={(e)=>{  this.removeClick();
                            let target = e.target; 
                     home = 0;
@@ -171,7 +172,8 @@ let addClose = (mainelement, span, x )  =>{
                     films = 0;
                     people++;
                       if(people <= 2)
-                      setTimeout(()=> {target.click();} ,1);                                }}    
+                      setTimeout(()=> {target.click();} ,1);    
+        }}    
               
                >View People</Nav.Link>
             </Nav>
@@ -188,7 +190,8 @@ let addClose = (mainelement, span, x )  =>{
 
  <Switch>
                         <Route exact path="/" component={HomePage} />
-                        <Route path="/films" component={FilmsPage}/>
+                        <Route exact path="/films" component={FilmsPage}/>
+                      <Route path="/films/:id" component={FilmInfo}/>
                      <Route path="/people" component={PeoplePage}/>
                     </Switch>
      
